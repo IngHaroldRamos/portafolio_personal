@@ -136,7 +136,7 @@
         </div>
         <div id="mySidenav" class="sidenav">
             <div class="closebtn" onclick="closeNav()">&times;</div>
-            <img class="logo" src="./assets/images/harold_logo.png" alt="logo" height="150px" >
+            <img class="logo" src="./assets/images/harold_logo.png" alt="logo" height="150px" href="https://ingharoldramos.github.io/portafolio_personal/">
             <ul class="sidescreen_sub icetab-container" id="icetab-container2">
                 <li class="icetab current-tab" onclick="openNav()">
                     <a class="icons2" href="javascript:void(0)">
@@ -972,10 +972,10 @@
 
 
                     </div>
-                    
+
                     <h5 class="copyright">© Ing.Harold Ramos 2025. Todos los derechos reservados
                     </h5>
-                    
+
                 </section>
                 <!-- ======================================= Contact us Section End ================================== -->
             </div>
@@ -1231,6 +1231,39 @@
                 if (item.innerText.trim().toLowerCase().includes("contacto")) {
                     item.classList.add("current-tab");
                 }
+            });
+        });
+    </script>
+
+    <script>
+        // Controlar clic en menú Inicio
+        document.querySelectorAll(".icetab").forEach(item => {
+            item.addEventListener("click", function () {
+                const text = this.innerText.trim().toLowerCase();
+
+                // Desactiva todas las secciones
+                document.querySelectorAll(".tabcontent").forEach(tab => tab.classList.remove("tab-active"));
+                document.querySelectorAll(".icetab").forEach(tab => tab.classList.remove("current-tab"));
+
+                // Activa la sección correspondiente según el texto
+                if (text.includes("inicio")) {
+                    document.getElementById("home").classList.add("tab-active");
+                } else if (text.includes("sobre mi")) {
+                    document.getElementById("about").classList.add("tab-active");
+                } else if (text.includes("resumen")) {
+                    document.getElementById("resume").classList.add("tab-active");
+                } else if (text.includes("servicios")) {
+                    document.getElementById("services").classList.add("tab-active");
+                } else if (text.includes("habilidades")) {
+                    document.getElementById("skill").classList.add("tab-active");
+                } else if (text.includes("portafolio")) {
+                    document.getElementById("portfolio").classList.add("tab-active");
+                } else if (text.includes("contacto")) {
+                    document.getElementById("contact").classList.add("tab-active");
+                }
+
+                // Activa la pestaña actual visualmente
+                this.classList.add("current-tab");
             });
         });
     </script>
